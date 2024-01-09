@@ -1,0 +1,155 @@
+:root{
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+
+  background-color: var(--Light-grey);
+}
+.wrapper{
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+}
+button{
+  border: none;
+  cursor: pointer;
+}
+button.calc{
+  border-radius: 100%;
+  background: var(--Purple);
+}
+.container{
+  background-color: var(--White);
+  margin: 0;
+  border-radius: 10px 10px 100px 10px ;
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  padding: 40px;
+  font-family: "poppins",sans-serif;
+}
+label{
+  color: var(--Smokey-grey);
+  font-weight: 700;
+  font-size: 14px;
+}
+#age{
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 30px;
+}
+.age-item{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.age-item input{
+  width: 100px;
+  border-radius: 5px;
+  border: 1px var(--Light-grey) solid;
+  font-weight: 900;
+}
+.error-border:focus{
+  outline-color: var(--Light-red);
+}
+form input:focus{
+  outline-color: var(--Purple);
+}
+.error{
+  color: var(--Light-red);
+}
+.invalid{
+  color: var(--Light-red);
+  font-size: 10px;
+}
+#day,#month,#year{
+  padding: 10px 10px;
+}
+span.item{
+  color: var(--Purple);
+}
+button:active{
+  background-color: var(--Off-black);
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 20px;
+  top: 100px;
+}
+
+button.calc img{
+  border-radius: 100%;
+  width: 50px;
+  height: 60px;
+  padding: 10px;
+  
+}
+.button::before{
+  content: "";
+  height: 1px;
+  width: 400px;
+  background-color: var(--Light-grey);
+}
+.calculator{
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 20px;
+}
+@media (max-width:500px){
+  .container{
+    width: 320px;
+    height: 350px;
+    padding: 20px;
+    position: relative;
+  }
+  .calculator{
+    font-size: 30px;
+  }
+  input{
+    max-width: 80px;
+  }
+  .button::before{
+    width: 100px;
+  }
+
+  .button{
+    margin: 30px auto;
+    left: 40px;
+  }
+  .button::after{
+    content: "";
+  height: 1px;
+  width: 100px;
+  background-color: var(--Light-grey);
+  }
+  button.calc img{
+    width: 30px;
+    height: 40px;
+    padding: 2px;
+  }
+  .invalid{
+    font-size: 8px;
+  }
+}
